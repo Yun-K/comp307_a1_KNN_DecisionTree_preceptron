@@ -26,7 +26,7 @@ public class KNearestNeighbour {
     private static List<Wine> wine_testingList;
 
     /** the K value which represent the number of neighbours */
-    private static int KNeighbours;
+    public static int KNeighbours;
 
     /**
      * Description: <br/>
@@ -36,7 +36,7 @@ public class KNearestNeighbour {
      * @param filePath
      *            the file path
      */
-    private void loadFile(String[] filePath) {
+    public void loadFile(String[] filePath) {
         wine_trainingList = Tool.onLoad(filePath[0]);
         wine_testingList = Tool.onLoad(filePath[1]);
     }
