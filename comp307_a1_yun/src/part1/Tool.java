@@ -1,4 +1,4 @@
-package comp307_a1_yun;
+package part1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,6 +15,8 @@ import java.util.List;
  * @version
  */
 public class Tool {
+    /** feature weight list which store the range */
+    private static List<Double> featureWeightList = new ArrayList<Double>();
 
     /**
      * Description: <br/>
@@ -27,30 +29,27 @@ public class Tool {
      * 
      * @author Yun Zhou
      * @param currentWine
+     *            current wine
      * @param anotherWine
+     *            the wine to compare
      * @return the shortest distance between two wine instance
      */
     public static double getEclidenDistance_weight(Wine currentWine, Wine anotherWine) {
-        int featureSize = currentWine.getFeatures_list().size();
 
-        assert featureSize == anotherWine.getFeatures_list().size();
-        double distance = 0.0;// the distance between 2 wine objects
-        double count = 0.0;
-        for (int i = 0; i < featureSize; i++) {
+        double eclidernDistance_weight = 0.0;// the distance between 2 wine objects
+        for (int i = 0; i < Wine.FEATURESIZE; i++) {
+            double feature_weight = getFeatureWeight(i);
             double diff = currentWine.getFeatures_list().get(i)
                     - anotherWine.getFeatures_list().get(i);
 
-            double feature_weight = getFeatureWeight(i);
-
             // from slide 6, lecture 5
             // i think use weight to describe is much more make sense than the range :)
-            count += diff * diff / (feature_weight * feature_weight);
+            eclidernDistance_weight += Math.pow(diff, 2) / Math.pow(feature_weight, 2);
         }
 
         // square root to get the shortest distance
-        distance = Math.sqrt(count);
-
-        return distance;
+        eclidernDistance_weight = Math.sqrt(eclidernDistance_weight);
+        return eclidernDistance_weight;
     }
 
     /**
@@ -63,26 +62,31 @@ public class Tool {
      * @return the weight of the specify feature
      */
     private static double getFeatureWeight(int index) {
-        List<Double> featureWeightList = new ArrayList<Double>();
-        // loop through
-        for (Wine trainingWine : KNearestNeighbour.getWine_trainingList()) {
+        // save the unnecessuary search
+        if (!featureWeightList.isEmpty()) {
+            return featureWeightList.get(index);
+        }
+
+        for (int i = 0; i < Wine.FEATURESIZE; i++) {
             // find the max and min of the feature in the training list
             double feature_max = Double.NEGATIVE_INFINITY;
             double feature_min = Double.POSITIVE_INFINITY;
-            for (Double current_wine_feature_num : trainingWine.getFeatures_list()) {
-                if (current_wine_feature_num < feature_min) {
-                    feature_min = current_wine_feature_num;
-                }
-                if (current_wine_feature_num > feature_max) {
-                    feature_max = current_wine_feature_num;
+            for (Wine currentWine : KNearestNeighbour.getWine_trainingList()) {
+                if (currentWine.getFeatures_list().get(i) < feature_min) {
+                    feature_min = currentWine.getFeatures_list().get(i);
+                } else if (currentWine.getFeatures_list().get(i) > feature_max) {
+                    feature_max = currentWine.getFeatures_list().get(i);
                 }
             }
             // assign the average to be the weight
             double featureWeight = feature_max - feature_min;
-            featureWeightList.add(Math.abs(featureWeight));
+
+            featureWeightList.add(featureWeight);
+
         }
 
         return featureWeightList.get(index);
+
     }
 
     /**

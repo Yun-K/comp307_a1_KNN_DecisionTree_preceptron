@@ -1,4 +1,4 @@
-package comp307_a1_yun;
+package part1;
 
 import java.util.List;
 
@@ -14,20 +14,27 @@ public class Wine {
     /** the list of the features that each wine instance have */
     private List<Double> features_list;
 
-    private int classLabel_real, classLabel_guess;
+    /** which class does this wine instacne belongs */
+    private int classLabel_real;
 
+    /** the distance to the TestWine instance */
     private double distanceToTestWine;
+
+    /** the feature size, the Wine has 13 attributes, so the value is 13. */
+    public static int FEATURESIZE;
 
     /**
      * A constructor. It construct a new instance of Wine.
      *
      * @param features_list
-     * @param classLabel_int
+     *            the list of the features that each wine instance have
+     * @param classLabel_real
+     *            the class that this wine instacne belongs
      */
-    public Wine(List<Double> features_list, int classLabel_int) {
+    public Wine(List<Double> features_list, int classLabel_real) {
         this.features_list = features_list;
-        this.classLabel_real = classLabel_int;
-
+        this.classLabel_real = classLabel_real;
+        FEATURESIZE = features_list.size();
     }
 
     /**
@@ -46,15 +53,6 @@ public class Wine {
      */
     public int getClassLabel_real() {
         return classLabel_real;
-    }
-
-    /**
-     * Get the classLabel_guess.
-     *
-     * @return the classLabel_guess
-     */
-    public int getClassLabel_guess() {
-        return classLabel_guess;
     }
 
     /**
@@ -84,16 +82,6 @@ public class Wine {
      */
     public void setClassLabel_real(int classLabel_real) {
         this.classLabel_real = classLabel_real;
-    }
-
-    /**
-     * Set the classLabel_guess.
-     *
-     * @param classLabel_guess
-     *            the classLabel_guess to set
-     */
-    public void setClassLabel_guess(int classLabel_guess) {
-        this.classLabel_guess = classLabel_guess;
     }
 
     /**
