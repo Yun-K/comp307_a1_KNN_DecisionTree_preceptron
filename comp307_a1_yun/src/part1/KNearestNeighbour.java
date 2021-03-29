@@ -50,10 +50,12 @@ public class KNearestNeighbour {
     public void execute() {
         double correctGuessNumber = 0.0;
 
+        int i_th = 0;// the number of the testWIne, used for printing results
         /*
          * compare the test wine to all train wine, in order to find which train wine is closer
          */
         for (Wine testWine : wine_testingList) {
+            i_th++;
             // find the shortest trainWine in order to sort and classify
             for (Wine trainWine : wine_trainingList) {
                 double distance = Tool.getEclidenDistance_weight(trainWine, testWine);
@@ -73,12 +75,21 @@ public class KNearestNeighbour {
             // assign the class label with the max occurance from k nearest neighbours
             int guessLabel_class = guess_testWIne_class();
 
+            boolean isCorrect = false;
             // check whether it's correct
             if (guessLabel_class == testWine.getClassLabel_real()) {
                 correctGuessNumber += 1.0;
+                isCorrect = true;
             }
-        }
+            // System.out.println("-----------------------------------------------");
+            // System.out.println("For the " + i_th + "th test wine:");
+            // System.out.println("The real class label is " + testWine.getClassLabel_real());
+            // System.out.println("The guess class label by my knn is " + guessLabel_class);
+            // System.out.println("which is:\t" + isCorrect);
 
+        }
+        System.out.println(
+                "-----------------K= " + KNeighbours + "------------------------------");
         double size = wine_testingList.size();
         double accuracy = correctGuessNumber / size * 100.0;
 
@@ -88,55 +99,6 @@ public class KNearestNeighbour {
         // System.out.println(accuracy);
         System.out.println("\n------------------------------------------------\n");
 
-    }
-
-    /**
-     * Description: <br/>
-     * Main method, entrance of the part 1, KNN. Args should be the path to two wine.txt, the
-     * FIRST should be training, the SECOND should be testing.
-     * 
-     * @author Yun Zhou
-     * @param args
-     *            the path to two wine.txt
-     */
-    public static void main(String[] args) {
-        // if (args.length < 2) {
-        // System.err.println(
-        // "Please enter 2 arguments, the first for wine-training and the second for the
-        // wine-test.");
-        // return;
-        // }
-        System.out.println("============      Part 1      ===========");
-        // KNearestNeighbour knn = new KNearestNeighbour();
-        // knn.loadFile(args);
-        // for (int i = 1; i < 10; i++) {
-        // if (i %2 == 0){// || i == 4 || i == 6 || i == 8) {
-        // continue;
-        // }
-        // KNeighbours = i;
-        // System.out.println("-----------------K= " + KNeighbours
-        // + "------------------------------");
-        // knn.execute();
-        // }
-
-        //////////////////////////////////////////////////////////////////////////////////////////
-        String[] filePath = new String[2];
-        filePath[0] = "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part1/wine-training";
-        filePath[1] = "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part1/wine-test";
-
-        // load the file first
-        KNearestNeighbour knn = new KNearestNeighbour();
-        knn.loadFile(filePath);
-        // loop through the K
-        for (int i = 1; i < 10; i++) {
-            if (i % 2 == 0) {// == 2 || i == 4 || i == 6 || i == 8) {
-                continue;
-            }
-            KNeighbours = i;
-            System.out.println(
-                    "-----------------K= " + KNeighbours + "------------------------------");
-            knn.execute();
-        }
     }
 
     /**

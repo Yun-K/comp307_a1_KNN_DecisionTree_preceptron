@@ -1,0 +1,145 @@
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-0
+The test set: 
+	  hepatitis-test-run-0
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 23.0
+Total test instances: 30.0
+The accuracy is: 23.0 out of 30.0
+Accuracy: 76.67%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-1
+The test set: 
+	  hepatitis-test-run-1
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 23.0
+Total test instances: 30.0
+The accuracy is: 23.0 out of 30.0
+Accuracy: 76.67%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-2
+The test set: 
+	  hepatitis-test-run-2
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 23.0
+Total test instances: 30.0
+The accuracy is: 23.0 out of 30.0
+Accuracy: 76.67%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-3
+The test set: 
+	  hepatitis-test-run-3
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 22.0
+Total test instances: 30.0
+The accuracy is: 22.0 out of 30.0
+Accuracy: 73.33%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-4
+The test set: 
+	  hepatitis-test-run-4
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 24.0
+Total test instances: 30.0
+The accuracy is: 24.0 out of 30.0
+Accuracy: 80.00%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-5
+The test set: 
+	  hepatitis-test-run-5
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 22.0
+Total test instances: 30.0
+The accuracy is: 22.0 out of 30.0
+Accuracy: 73.33%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-6
+The test set: 
+	  hepatitis-test-run-6
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 27.0
+Total test instances: 30.0
+The accuracy is: 27.0 out of 30.0
+Accuracy: 90.00%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-7
+The test set: 
+	  hepatitis-test-run-7
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 22.0
+Total test instances: 30.0
+The accuracy is: 22.0 out of 30.0
+Accuracy: 73.33%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-8
+The test set: 
+	  hepatitis-test-run-8
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 16.0
+Total test instances: 30.0
+The accuracy is: 16.0 out of 30.0
+Accuracy: 53.33%
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+The training set: 
+	  hepatitis-training-run-9
+The test set: 
+	  hepatitis-test-run-9
+
+-----------Decision Tree Accuracy result------------------------------
+-----------------------------------------
+Total number of correct guessed instances: 23.0
+Total test instances: 30.0
+The accuracy is: 23.0 out of 30.0
+Accuracy: 76.67%
+-----------------------------------------
+-----------------------------------------
+It runs 10.0 times
+
+The average accuracy for the decision tree is  75.00%
+-----------------------------------------

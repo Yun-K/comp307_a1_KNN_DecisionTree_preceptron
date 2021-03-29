@@ -1,0 +1,457 @@
+
+============      Part 1      ===========
+-----------------K= 1------------------------------
+-----------------------------------------------
+For the 1th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 2th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 3th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 4th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 5th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 6th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 7th test wine:
+The real class label is 2
+The guess class label by my knn is 1
+which is: false
+-----------------------------------------------
+For the 8th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 9th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 10th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 11th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 12th test wine:
+The real class label is 2
+The guess class label by my knn is 3
+which is: false
+-----------------------------------------------
+For the 13th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 14th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 15th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 16th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 17th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 18th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 19th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 20th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 21th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 22th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 23th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 24th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 25th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 26th test wine:
+The real class label is 2
+The guess class label by my knn is 3
+which is: false
+-----------------------------------------------
+For the 27th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 28th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 29th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 30th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 31th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 32th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 33th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 34th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 35th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 36th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 37th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 38th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 39th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 40th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 41th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 42th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 43th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 44th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 45th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 46th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 47th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 48th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 49th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 50th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 51th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 52th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 53th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 54th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 55th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 56th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 57th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 58th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 59th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 60th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 61th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 62th test wine:
+The real class label is 2
+The guess class label by my knn is 1
+which is: false
+-----------------------------------------------
+For the 63th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 64th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 65th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 66th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 67th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 68th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 69th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 70th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 71th test wine:
+The real class label is 2
+The guess class label by my knn is 1
+which is: false
+-----------------------------------------------
+For the 72th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 73th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 74th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 75th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 76th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 77th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 78th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 79th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 80th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 81th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 82th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 83th test wine:
+The real class label is 3
+The guess class label by my knn is 3
+which is: true
+-----------------------------------------------
+For the 84th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 85th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 86th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 87th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+-----------------------------------------------
+For the 88th test wine:
+The real class label is 2
+The guess class label by my knn is 2
+which is: true
+-----------------------------------------------
+For the 89th test wine:
+The real class label is 1
+The guess class label by my knn is 1
+which is: true
+
+------------------------------------------------
+
+-----------------K= 1------------------------------
+The number of correct classified instances: 84.0
+Total test wine instances: 89
+The Accuracy is: 94.38%
+------------------------------------------------
+
