@@ -3,13 +3,18 @@ package part3;
 import java.util.List;
 
 public class Preceptron {
+    /** a list of the image that from the image.data file */
+    protected List<ImageP3> imagesDataList;
 
+    /**
+     * A constructor. It construct a new instance of Preceptron.
+     *
+     * @param filePath
+     *            the image data to load
+     */
     public Preceptron(String filePath) {
-        loadFiles(filePath);
+        this.imagesDataList = ImageP3.loadFiles(filePath);
     }
-
-    /** a list of image */
-    // List<Image> imageDataList;
 
     public static void main(String[] args) {
         // if (args.length < 1) {
@@ -21,10 +26,6 @@ public class Preceptron {
         // String filePath = args[0];
         String filePath = "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part3/image.data";
         Preceptron preceptron = new Preceptron(filePath);
-
-    }
-
-    public void loadFiles(String filePathName) {
 
     }
 
