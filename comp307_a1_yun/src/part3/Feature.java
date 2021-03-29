@@ -14,11 +14,13 @@ public class Feature {
 
     private boolean[] sgn;
 
+    private int dummy;
+
     /**
      * A constructor. It construct a new instance of Feature.
      *
      */
-    public Feature() {
+    public Feature(int seed) {
         setUpRandomFeature();
     }
 

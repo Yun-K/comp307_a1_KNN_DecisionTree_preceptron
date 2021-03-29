@@ -53,6 +53,11 @@ public class Tool2 {
         if (denominator == 0.0 || numerator == 0.0) {
             return 0.0;
         }
+        // from the tutorial 3
+        if (liveInstances_num == dieInstances_num) {
+            return Double.POSITIVE_INFINITY;
+
+        }
 
         double entropy = numerator / denominator;
         return entropy;

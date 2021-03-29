@@ -4,21 +4,20 @@ public class Part2Main extends DecisionTree {
 
     public static void main(String[] args) {
 
-        if (args.length < 2) {
-            System.err.println(
-                    "Please enter 2 arguments, the first for the path of hepatitis-training and the second "
-                               + "for the hepatitis-test.");
-            return;
-        }
-        System.out.println("============ Part 2 Yun ZHou, 300442776===============");
-        String trainfilePath = args[0];
-        String testfilePath = args[1];
+        // if (args.length < 2) {
+        // System.err.println(
+        // "Please enter 2 arguments, the first for the path of hepatitis-training and the
+        // second "
+        // + "for the hepatitis-test.");
+        // return;
+        // }
+        // System.out.println("============ Part 2 Yun ZHou, 300442776===============");
+        // String trainfilePath = args[0];
+        // String testfilePath = args[1];
 
-        // String trainfilePath =
-        // "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part2/hepatitis-training";
-        //
-        // String testfilePath =
-        // "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part2/hepatitis-test";
+        String trainfilePath = "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part2/hepatitis-training";
+
+        String testfilePath = "/Users/11973/git/comp307_a1_yun/comp307_a1_yun/ass1_data/part2/hepatitis-test";
 
         DecisionTree dTree = new DecisionTree();
         dTree.loadFiles(trainfilePath, testfilePath);
