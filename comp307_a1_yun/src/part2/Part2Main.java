@@ -6,9 +6,8 @@ public class Part2Main extends DecisionTree {
 
         // if (args.length < 2) {
         // System.err.println(
-        // "Please enter 2 arguments, the first for the path of hepatitis-training and the
-        // second "
-        // + "for the hepatitis-test.");
+        // "Please enter 2 arguments, the first for the path of hepatitis-training and"
+        // + " the second for the hepatitis-test.");
         // return;
         // }
         // System.out.println("============ Part 2 Yun ZHou, 300442776===============");
@@ -26,7 +25,7 @@ public class Part2Main extends DecisionTree {
         printAccuracyResult(tree);
         printBaseLineClassifier();
 
-        // /* below for the report q2, 10 fold cross validation */
+        /* below for the report q2, 10 fold cross validation */
         // double totalAccuracy_decisionTree = 0.0;
         // double times = 0.0;
         // for (int i = 0; i < 10; i++) {
@@ -51,12 +50,12 @@ public class Part2Main extends DecisionTree {
         // // tree_1.drawTree("");
         // }
         // double average_accuracy_decisionTree = totalAccuracy_decisionTree / times;
-        //
         // System.out.println("-----------------------------------------");
         // System.out.println("It runs " + times + " times");
         // System.out.printf("\nThe average accuracy for the decision tree is %.2f%%",
         // average_accuracy_decisionTree);
         // System.out.println("\n-----------------------------------------");
+
     }
 
 }

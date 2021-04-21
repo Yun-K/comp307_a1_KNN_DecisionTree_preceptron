@@ -11,94 +11,6 @@ public class DecisionTree {
     /** a list of testing instances reading from the txt file */
     static List<Instance> test_instances = new ArrayList<Instance>();
 
-    public static double printBaseLineClassifier() {
-        System.out
-                .println(
-                        "\n-----------BaseLine classifier Accuracy result------------------------------");
-        double correctGuessNumber = 0.0;
-        double totalTestFileSize = test_instances.size() * 1.0;
-        for (Instance test_instance : test_instances) {
-            // always predicts the most frequent class in the training set)
-            String guess_result = getMostPossible_liveOrDie(train_instances);
-            if (guess_result.equals(test_instance.getLiveOrDead())) {
-                correctGuessNumber++;
-            }
-        }
-        System.out.println("-----------------------------------------");
-        System.out.println("Total number of correct guessed instances: " + correctGuessNumber);
-        System.out.println("Total test instances: " + totalTestFileSize);
-        System.out
-                .println("The accuracy is: " + correctGuessNumber + " out of " + totalTestFileSize);
-        double accuracy = (correctGuessNumber / totalTestFileSize) * 100;
-        System.out.printf("Accuracy: %.2f%%", accuracy);
-        System.out.println("\n-----------------------------------------");
-        return accuracy;
-
-    }
-
-    public static double printAccuracyResult(TreeNode tree) {
-        System.out
-                .println(
-                        "\n-----------Decision Tree Accuracy result------------------------------");
-        double correctGuessNumber = 0.0;
-        double totalTestFileSize = test_instances.size() * 1.0;
-        for (Instance test_instance : test_instances) {
-            String guess_result = guess_liveOrDie(tree, test_instance);
-            if (guess_result.equals(test_instance.getLiveOrDead())) {
-                correctGuessNumber++;
-            }
-        }
-        System.out.println("-----------------------------------------");
-        System.out.println("Total number of correct guessed instances: " + correctGuessNumber);
-        System.out.println("Total test instances: " + totalTestFileSize);
-        System.out
-                .println("The accuracy is: " + correctGuessNumber + " out of " + totalTestFileSize);
-        double accuracy = (correctGuessNumber / totalTestFileSize) * 100;
-        System.out.printf("Accuracy: %.2f%%", accuracy);
-        System.out.println("\n-----------------------------------------");
-        return accuracy;
-    }
-
-    /**
-     * Description: <br/>
-     * Guess the instance argument is live or die by using the provided decison tree.
-     * 
-     * @author Yun Zhou
-     * @param tree
-     *            the provided tree
-     * @param instanceToGuess
-     *            instance to guess
-     * @return live or die
-     */
-    public static String guess_liveOrDie(TreeNode tree, Instance instanceToGuess) {
-        if (tree.isLeafTreeNode()) {
-            return tree.getLiveOrDead();
-        }
-        // do the recursion to find the leafNode
-
-        // the index need to -1 due to the attribute Class need to be ignored
-        int index = Tool2.categoryNames.indexOf(tree.getAttributeValueString()) - 1;
-        if (instanceToGuess.getAttributeValue(index) == true) {
-            return guess_liveOrDie(tree.getLeftChildNode(), instanceToGuess);
-        } else {
-            return guess_liveOrDie(tree.getRightChildNode(), instanceToGuess);
-        }
-
-    }
-
-    /**
-     * Description: <br/>
-     * Load files first.
-     * 
-     * @author Yun Zhou
-     * @param trainfilePath
-     * @param testfilePath
-     */
-    public void loadFiles(String trainfilePath, String testfilePath) {
-        train_instances = Tool2.onLoad(trainfilePath);
-        test_instances = Tool2.onLoad(testfilePath);
-    }
-
     /**
      * Description: <br/>
      * To build a decision tree.
@@ -160,7 +72,6 @@ public class DecisionTree {
             // do need to -1 because for the Instance.attributes, we don't have live/dead
             // do not need to -1 anymore since at the top of the method, the Class is removed
             int index = Tool2.categoryNames.indexOf(attributeString);// - 1;
-            double bestImpurity = Double.POSITIVE_INFINITY;
             for (Instance instance : allInstances_current) {
                 if (instance.getAttributeValue(index)) {
                     true_instance_list_temp.add(instance);
@@ -170,7 +81,9 @@ public class DecisionTree {
             }
 
             // compute the impurity
-            double trueList_impurity = 0.0, falseList_impurity = 0.0;
+            double bestImpurity = Double.POSITIVE_INFINITY;
+            double trueList_impurity = 0.0,
+                    falseList_impurity = 0.0;
             if (!true_instance_list_temp.isEmpty()) {
                 trueList_impurity = Tool2.calculateImpurity_entropy(true_instance_list_temp);
             }
@@ -180,11 +93,11 @@ public class DecisionTree {
             // get the weighted average impurity, the maths is from slide 16, lec6
             double weighted_true = trueList_impurity
                     * ((double) true_instance_list_temp.size()
-                            / (double) allInstances_current.size());
+                            / (double) allInstances_current.size()),
 
-            double weighted_false = falseList_impurity
-                    * ((double) false_instance_list_temp.size()
-                            / (double) allInstances_current.size());
+                    weighted_false = falseList_impurity
+                            * ((double) false_instance_list_temp.size()
+                                    / (double) allInstances_current.size());
             double weighted_average_impurity = weighted_true + weighted_false;
 
             if (weighted_average_impurity < bestImpurity) {
@@ -205,6 +118,94 @@ public class DecisionTree {
         return new TreeNode(bestAttribute_string, leftTreeNode, righTreeNode,
                 calculateProbability_majorityClass(allInstances_current));
 
+    }
+
+    public static double printAccuracyResult(TreeNode tree) {
+        System.out
+                .println(
+                        "\n-----------Decision Tree Accuracy result------------------------------");
+        double correctGuessNumber = 0.0;
+        double totalTestFileSize = test_instances.size() * 1.0;
+        for (Instance test_instance : test_instances) {
+            String guess_result = guess_liveOrDie(tree, test_instance);
+            if (guess_result.equals(test_instance.getLiveOrDead())) {
+                correctGuessNumber++;
+            }
+        }
+        System.out.println("-----------------------------------------");
+        System.out.println("Total number of correct guessed instances: " + correctGuessNumber);
+        System.out.println("Total test instances: " + totalTestFileSize);
+        System.out
+                .println("The accuracy is: " + correctGuessNumber + " out of " + totalTestFileSize);
+        double accuracy = (correctGuessNumber / totalTestFileSize) * 100;
+        System.out.printf("Accuracy: %.2f%%", accuracy);
+        System.out.println("\n-----------------------------------------");
+        return accuracy;
+    }
+
+    public static double printBaseLineClassifier() {
+        System.out
+                .println(
+                        "\n-----------BaseLine classifier Accuracy result------------------------------");
+        double correctGuessNumber = 0.0;
+        double totalTestFileSize = test_instances.size() * 1.0;
+        for (Instance test_instance : test_instances) {
+            // always predicts the most frequent class in the training set)
+            String guess_result = getMostPossible_liveOrDie(train_instances);
+            if (guess_result.equals(test_instance.getLiveOrDead())) {
+                correctGuessNumber++;
+            }
+        }
+        System.out.println("-----------------------------------------");
+        System.out.println("Total number of correct guessed instances: " + correctGuessNumber);
+        System.out.println("Total test instances: " + totalTestFileSize);
+        System.out
+                .println("The accuracy is: " + correctGuessNumber + " out of " + totalTestFileSize);
+        double accuracy = (correctGuessNumber / totalTestFileSize) * 100;
+        System.out.printf("Accuracy: %.2f%%", accuracy);
+        System.out.println("\n-----------------------------------------");
+        return accuracy;
+
+    }
+
+    /**
+     * Description: <br/>
+     * Guess the instance argument is live or die by using the provided decison tree.
+     * 
+     * @author Yun Zhou
+     * @param tree
+     *            the provided tree
+     * @param instanceToGuess
+     *            instance to guess
+     * @return live or die
+     */
+    public static String guess_liveOrDie(TreeNode tree, Instance instanceToGuess) {
+        if (tree.isLeafTreeNode()) {
+            return tree.getLiveOrDead();
+        }
+        // do the recursion to find the leafNode
+
+        // the index need to -1 due to the attribute Class need to be ignored
+        int index = Tool2.categoryNames.indexOf(tree.getAttributeValueString()) - 1;
+        if (instanceToGuess.getAttributeValue(index) == true) {
+            return guess_liveOrDie(tree.getLeftChildNode(), instanceToGuess);
+        } else {
+            return guess_liveOrDie(tree.getRightChildNode(), instanceToGuess);
+        }
+
+    }
+
+    /**
+     * Description: <br/>
+     * Load files first.
+     * 
+     * @author Yun Zhou
+     * @param trainfilePath
+     * @param testfilePath
+     */
+    public void loadFiles(String trainfilePath, String testfilePath) {
+        train_instances = Tool2.onLoad(trainfilePath);
+        test_instances = Tool2.onLoad(testfilePath);
     }
 
     /**

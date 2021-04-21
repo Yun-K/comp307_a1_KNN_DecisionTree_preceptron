@@ -50,12 +50,12 @@ public class KNearestNeighbour {
     public void execute() {
         double correctGuessNumber = 0.0;
 
-        int i_th = 0;// the number of the testWIne, used for printing results
+        // int i_th = 0;// the number of the testWIne, used for printing results
         /*
          * compare the test wine to all train wine, in order to find which train wine is closer
          */
         for (Wine testWine : wine_testingList) {
-            i_th++;
+            // i_th++;
             // find the shortest trainWine in order to sort and classify
             for (Wine trainWine : wine_trainingList) {
                 double distance = Tool.getEclidenDistance_weight(trainWine, testWine);

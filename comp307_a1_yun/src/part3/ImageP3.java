@@ -46,6 +46,15 @@ public class ImageP3 {
         this.pixels = pixels;
     }
 
+    /**
+     * Description: <br/>
+     * Load Image.data files from the specified file path.
+     * 
+     * @author Yun Zhou
+     * @param filePathName
+     *            the file path
+     * @return the list of images
+     */
     public static List<ImageP3> loadFiles(String filePathName) {
         // precondition check
         // check if the path name does not contains the valid file name
@@ -76,14 +85,16 @@ public class ImageP3 {
 
             while (scan.hasNext()) {
                 String p1 = scan.next();
-                if (p1.equalsIgnoreCase("p1")) {
+                if (!p1.equalsIgnoreCase("p1")) {
                     System.err.println(
                             "This is not the P1 PBM file, since the content of the first line is not P1.");
+                    // continue;
                     throw new Exception();
                 }
                 String comment_class = scan.next().substring(1);// O or X
                 int imageWidth = scan.nextInt();
                 int imageHeight = scan.nextInt();
+                // dont know what it is, from MakeImage.java
                 java.util.regex.Pattern bit = java.util.regex.Pattern.compile("[01]");
                 newimagePixels = new boolean[imageWidth][imageHeight];
 
@@ -115,7 +126,7 @@ public class ImageP3 {
     }
 
     /**
-     * Get the comment_classLabel.
+     * Get the comment_classLabel, O or X.
      *
      * @return the comment_classLabel
      */

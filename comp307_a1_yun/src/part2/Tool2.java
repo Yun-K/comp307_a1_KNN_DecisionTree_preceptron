@@ -47,8 +47,8 @@ public class Tool2 {
 
         // get the entropy
         double denominator = (liveInstances_num + dieInstances_num)
-                * (liveInstances_num + dieInstances_num);
-        double numerator = liveInstances_num * dieInstances_num;
+                * (liveInstances_num + dieInstances_num);// 分母
+        double numerator = liveInstances_num * dieInstances_num;// 分子
 
         if (denominator == 0.0 || numerator == 0.0) {
             return 0.0;
@@ -56,6 +56,7 @@ public class Tool2 {
         // from the tutorial 3
         if (liveInstances_num == dieInstances_num) {
             return Double.POSITIVE_INFINITY;
+            // return Double.MAX_VALUE;
 
         }
 

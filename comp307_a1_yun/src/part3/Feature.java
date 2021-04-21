@@ -1,5 +1,9 @@
 package part3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Description: <br/>
  * The feature class, part 3 need to generate 50 random feature.
@@ -8,20 +12,36 @@ package part3;
  * @version
  */
 public class Feature {
-    private int[] row;
+    /** the row and col of the feature */
+    private int[] row, col;
 
-    private int[] col;
-
+    /** the sgn store the boolean values */
     private boolean[] sgn;
 
-    private int dummy;
+    /** first feature is the dummy. */
+    private boolean isDummy = false;
+
+    /** A list of feature values */
+    private List<Integer> integerValues;
 
     /**
      * A constructor. It construct a new instance of Feature.
      *
      */
-    public Feature(int seed) {
+    public Feature() {
         setUpRandomFeature();
+        this.setIntegerValues(new ArrayList<Integer>());
+    }
+
+    /**
+     * A constructor. It construct a new instance of Feature. Set the dummy as true since it's
+     * the first.
+     * 
+     * @param isDummy
+     */
+    public Feature(boolean isDummy) {
+        this.isDummy = isDummy;
+        this.setIntegerValues(new ArrayList<Integer>());
     }
 
     /**
@@ -57,7 +77,7 @@ public class Feature {
         for (int i = 0; i < sgn.length; i++) {
             double rand = Math.random();
             boolean value = false;
-            if (rand < .5) {
+            if (rand < 0.5) {
                 value = true;
             }
             sgn[i] = value;
@@ -67,12 +87,15 @@ public class Feature {
 
     /**
      * Description: <br/>
-     * From the assignment handout. Return the value of a given image.
+     * From the assignment handout.
+     * 
+     * An algorthim which can compute the value of the feature for a given image (represented
+     * as a 2D Boolean array) .
      * 
      * @author Yun Zhou
      * @param image
      *            the image to be workd on
-     * @return Return the value of a given image.
+     * @return the value of the feature for a given image
      */
     public int getValue(ImageP3 image) {
         int sum = 0;
@@ -82,6 +105,22 @@ public class Feature {
             }
         }
         return (sum >= 2) ? 1 : 0;// ternary operator
+    }
+
+    /**
+     * Description: <br/>
+     * Return the feature strings, which print the row, col and sgn.
+     * 
+     * @author Yun Zhou
+     * @return the feature strings, which print the row, col and sgn.
+     */
+    public String printFeatures() {
+        String feat = "Features{ rows = ";
+        feat += Arrays.toString(row) + "  cols = ";
+        feat += Arrays.toString(col) + "  sgn = ";
+        feat += Arrays.toString(sgn) + " }";
+        System.out.println(feat);
+        return feat;
     }
 
     /**
@@ -112,33 +151,41 @@ public class Feature {
     }
 
     /**
-     * Set the row.
+     * Get the dummy.
      *
-     * @param row
-     *            the row to set
+     * @return the dummy
      */
-    public void setRow(int[] row) {
-        this.row = row;
+    public boolean isDummy() {
+        return isDummy;
     }
 
     /**
-     * Set the col.
+     * Set the dummy.
      *
-     * @param col
-     *            the col to set
+     * @param dummy
+     *            the dummy to set
      */
-    public void setCol(int[] col) {
-        this.col = col;
+    public void setDummy(boolean dummy) {
+        this.isDummy = dummy;
     }
 
     /**
-     * Set the sgn.
+     * Get the integerValues.
      *
-     * @param sgn
-     *            the sgn to set
+     * @return the integerValues
      */
-    public void setSgn(boolean[] sgn) {
-        this.sgn = sgn;
+    public List<Integer> getIntegerValues() {
+        return integerValues;
+    }
+
+    /**
+     * Set the integerValues.
+     *
+     * @param integerValues
+     *            the integerValues to set
+     */
+    public void setIntegerValues(List<Integer> integerValues) {
+        this.integerValues = integerValues;
     }
 
 }
